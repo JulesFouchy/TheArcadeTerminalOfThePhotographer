@@ -5,20 +5,17 @@ varying vec2 vTexCoord;
 
 // our texture coming from p5
 uniform sampler2D tex0;
+uniform float u_saturation;
 
 
 void main() {
-
   vec2 uv = vTexCoord;
-  // the texture is loaded upside down and backwards by default so lets flip it
   uv.y = 1.0 - uv.y;
+  vec3 texCol = texture2D(tex0, uv).rgb;
+  vec3 col;
 
-  // get the webcam as a vec4 using texture2D
-  vec4 tex = texture2D(tex0, uv);
+  float gray = 0.299*texCol.r + 0.587*texCol.g + 0.114*texCol.b;
+  col = u_saturation*texCol + (1.-u_saturation) * vec3(gray);
 
-  float gray = (tex.r+tex.g+tex.b)/3.;
-  tex.rgb = vec3(gray);
-
-  gl_FragColor = tex;
-  
+  gl_FragColor = vec4(col, 1.0);
 }
