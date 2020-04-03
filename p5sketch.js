@@ -42,7 +42,3 @@ function draw() {
 	  bP5TakeAPicture = false
 	}
 }
-
-function windowResized(){
-  resizeCanvas(windowWidth, windowHeight)
-}
