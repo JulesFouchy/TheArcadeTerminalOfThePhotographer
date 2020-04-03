@@ -1,3 +1,6 @@
+let bP5TakeAPicture = false
+let bP5DownloadMyImage = false
+
 let myShader
 let cam
 let img
@@ -27,11 +30,17 @@ function draw() {
   //imageMode(CENTER)
   image(pg, 0, 0, 320, 240)
   image(img, 0, 240, 320, 240)
-}
-
-function mousePressed(){
-  img = cam.get(0, 0, cam.width, cam.height)
-  img.resize(W, H)
+  if (bP5DownloadMyImage){
+  	console.log("Downloading. . . ")
+  	pg.save("Hello.jpg")
+  	bP5DownloadMyImage = false
+  	console.log("Downloaded !")
+  }
+  if (bP5TakeAPicture) {
+	  img = cam.get(0, 0, cam.width, cam.height)
+	  img.resize(W, H)
+	  bP5TakeAPicture = false
+	}
 }
 
 function windowResized(){
