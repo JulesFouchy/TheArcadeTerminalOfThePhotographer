@@ -1,8 +1,6 @@
 let bP5TakeAPicture = false
 let bP5DownloadMyImage = false
 
-let P5saturation = 0.0
-
 let myShader
 let cam
 let img
@@ -28,7 +26,9 @@ function draw() {
   background(100)
   pg.shader(myShader)
   myShader.setUniform('tex0', img)
-  myShader.setUniform('u_saturation', P5saturation)
+  myShader.setUniform('u_saturation', SLIDERS.saturation)
+  myShader.setUniform('u_contrast', SLIDERS.contrast)
+  myShader.setUniform('u_luminosity', SLIDERS.luminosity)
   pg.rect(0,0,width, height)
   //imageMode(CENTER)
   image(pg, 0, 0, 320, 240)
