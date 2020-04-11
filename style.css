@@ -1,7 +1,7 @@
 /* Credit : https://www.w3schools.com/howto/howto_js_rangeslider.asp */
 
-.slidercontainer {
-  width: 100%; /* Width of the outside container */
+.sliderscontainer {
+  width: 50%; /* Width of the outside container */
 }
 
 /* The slider itself */

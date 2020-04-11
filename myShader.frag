@@ -29,7 +29,7 @@ void main() {
 
   float gray = 0.299*texCol.r + 0.587*texCol.g + 0.114*texCol.b;
   col = u_saturation*texCol + (1.-u_saturation) * vec3(gray);
-  col += vec3(u_luminosity);
+  col = pow(col, vec3(u_luminosity));
   col = contrast(col, u_contrast);
 
   gl_FragColor = vec4(col, 1.0);
