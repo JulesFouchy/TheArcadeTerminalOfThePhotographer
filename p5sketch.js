@@ -35,12 +35,10 @@ function draw() {
 takeAPicture = () => {
     img = cam.get(0, 0, cam.width, cam.height)
     img.resize(W, H)
-    bP5TakeAPicture = false
 }
 
 downloadImage = () => {
     console.log("Downloading. . . ")
     pg.save("Hello.jpg")
-    bP5DownloadMyImage = false
     console.log("Downloaded !")
 }
