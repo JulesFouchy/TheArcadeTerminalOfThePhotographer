@@ -38,3 +38,7 @@
   background: #4CAF50; /* Green background */
   cursor: pointer; /* Cursor on hover */
 }
+
+.infoLogo {
+  width: 20px;
+}
