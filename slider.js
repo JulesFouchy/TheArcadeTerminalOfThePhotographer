@@ -16,7 +16,9 @@ const setValue = (variableName, val) => {
 }
 
 const showInfos = (variableName) => {
-	console.log(EXPLANATIONS[variableName])
+	const modal = document.getElementById("myModal")
+  	modal.style.display = "block"
+	document.getElementById("modalText").innerHTML = EXPLANATIONS[variableName]
 }
 
 const createSlider = (variableName, min, max, initialValue) => {
