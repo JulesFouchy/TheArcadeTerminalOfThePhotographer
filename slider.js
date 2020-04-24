@@ -1,13 +1,17 @@
 const SLIDERS = {
-	saturation: 1,
-	luminosity: 1,
-	contrast: 0
+	saturation:   1,
+	luminosity:   1,
+	contrast:     0,
+	colorGlitchX: 0,
+	colorGlitchY: 0,
 }
 
 const createSliders = () => {
 	createSlider('saturation',  0, 2)
 	createSlider('luminosity', 0, 2)
 	createSlider('contrast', -1, 1)
+	createSlider('colorGlitchX', -1, 1)
+	createSlider('colorGlitchY', -1, 1)
 }
 
 const setValue = (variableName, val) => {
